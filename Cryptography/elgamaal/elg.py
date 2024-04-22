@@ -16,9 +16,9 @@ def gcd(a, b):
 # Generating large random numbers
 def gen_key(q):
 
-	key = random.randint(pow(10, 20), q)
+	key = random.randint(int(pow(10, 20)), q)
 	while gcd(q, key) != 1:
-		key = random.randint(pow(10, 20), q)
+		key = random.randint(int(pow(10, 20)), q)
 
 	return key
 
@@ -69,7 +69,7 @@ def main():
 	msg = 'encryption'
 	print("Original Message :", msg)
 
-	q = random.randint(pow(10, 20), pow(10, 50))
+	q = random.randint(10**20, 10**50)
 	g = random.randint(2, q)
 
 	key = gen_key(q)# Private key for receiver
